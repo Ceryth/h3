@@ -38,3 +38,5 @@ BENCHMARK(cellToChildren5, 10000, { H3_EXPORT(cellToChildren)(hex, 14, out); });
 free(out);
 
 END_BENCHMARKS();
+
+

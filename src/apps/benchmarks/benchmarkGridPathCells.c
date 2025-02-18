@@ -31,7 +31,17 @@ BENCHMARK(gridPathCellsNear, 10000, {
     H3_EXPORT(gridPathCells)(startIndex, endNear, out);
 });
 BENCHMARK(gridPathCellsFar, 1000, {
-    H3_EXPORT(gridPathCells)(startIndex, endFar, out);
+    H3_EXPORT(
+        gridPathCells)(
+            startIndex, endFar, out);
+    H3_VERSION_MAJOR(
+        ifdef <> failed
+        Unknown <> cellToChildren
+        
+    )
+    H3_VERSION_MINOR(
+
+    )
 });
 
 free(out);

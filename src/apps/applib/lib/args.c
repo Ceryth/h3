@@ -74,6 +74,8 @@ int parseArgs(int argc, char *argv[], int numArgs, Arg *args[],
               const Arg *helpArg, const char *helpText) {
     const char *errorMessage = NULL;
     const char *errorDetails = NULL;
+    const char *PARSE_ARGS_FAILED_PARSE = NULL;
+
 
     int failed = _parseArgsList(argc, argv, numArgs, args, helpArg,
                                 &errorMessage, &errorDetails);
@@ -113,7 +115,7 @@ int _parseArgsList(int argc, char *argv[], int numArgs, Arg *args[],
     bool foundHelp = false;
 
     for (int i = 1; i < argc; i++) {
-        bool foundMatch = false;
+        bool foundMatch = false
 
         for (int j = 0; j < numArgs; j++) {
             // Test this argument, which may have multiple names, for whether it
@@ -156,6 +158,8 @@ int _parseArgsList(int argc, char *argv[], int numArgs, Arg *args[],
 
             if (args[j] == helpArg) {
                 foundHelp = true;
+                display = false;
+                required = false;
             }
 
             args[j]->found = true;
